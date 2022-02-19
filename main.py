@@ -20,10 +20,25 @@ class Game:
         self.clock = pygame.time.Clock()
         self.objects = {"Player": Player()}
         self.Map = Map()
+        self.sprites = pygame.sprite.Group()
+        self.sprites.add(self.objects["Player"])
 
     def main(self):
         while True:
+            self.clock.tick(FPS)
             """ # Считать Ввод """
-            self.screen.fill(BLACK)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    break
+                elif event.type == pygame.KEYDOWN:
+                    self.objects["Player"].Action(event.key)
             """ # Обновить кадр """
+            self.sprites.update()
             """ # Вывести кадр """
+            self.screen.fill(BLACK)
+            self.sprites.draw(self.screen)
+            pygame.display.flip()
+
+
+game = Game()
+game.main()
