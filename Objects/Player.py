@@ -3,7 +3,7 @@ import pygame
 WIDTH = 360
 HEIGHT = 480
 
-playerColor = (0, 255, 255)
+playerImg = pygame.image.load('./Assets/smth.png')
 
 
 def ks(x, y):
@@ -23,19 +23,30 @@ def ka(x, y):
 
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, screen):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((50, 50))
-        self.image.fill(playerColor)
+        self.image = playerImg.convert_alpha()
+        screen.blit(playerImg, (50, 50))
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
         self.actions = {pygame.K_s: ks,
                         pygame.K_a: ka,
                         pygame.K_w: kw,
                         pygame.K_d: kd}
+        self.modifyers = []
 
-    def Action(self, x):
-        if x in self.actions.keys():
-            tmp = self.actions[x](self.rect.x, self.rect.y)
+
+    def Tick(self):
+        for i in self.modifyers:
+            tmp = i(self.rect.x, self.rect.y)
             self.rect.x = tmp[0]
             self.rect.y = tmp[1]
+
+
+    def Action(self, x, MODE):
+        if x in self.actions.keys():
+            if MODE == 1:
+                self.modifyers.append(self.actions[x])
+            else:
+                self.modifyers.remove(self.actions[x])
+        x = "sad"

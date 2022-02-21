@@ -18,7 +18,7 @@ class Game:
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
-        self.objects = {"Player": Player()}
+        self.objects = {"Player": Player(self.screen)}
         self.Map = Map()
         self.sprites = pygame.sprite.Group()
         self.sprites.add(self.objects["Player"])
@@ -26,15 +26,21 @@ class Game:
     def main(self):
         while True:
             self.clock.tick(FPS)
-            """ # Считать Ввод """
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     break
                 elif event.type == pygame.KEYDOWN:
-                    self.objects["Player"].Action(event.key)
-            """ # Обновить кадр """
+                    print(event.key)
+                    self.objects["Player"].Action(event.key, 1)
+                    print(event.key)
+                elif event.type == pygame.KEYUP:
+                    self.objects["Player"].Action(event.key, 0)
+            
+            for i in self.objects.values():
+                i.Tick()
+                    
             self.sprites.update()
-            """ # Вывести кадр """
             self.screen.fill(BLACK)
             self.sprites.draw(self.screen)
             pygame.display.flip()
