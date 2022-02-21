@@ -31,9 +31,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     break
                 elif event.type == pygame.KEYDOWN:
-                    print(event.key)
                     self.objects["Player"].Action(event.key, 1)
-                    print(event.key)
                 elif event.type == pygame.KEYUP:
                     self.objects["Player"].Action(event.key, 0)
             
@@ -43,6 +41,7 @@ class Game:
             self.sprites.update()
             self.screen.fill(BLACK)
             self.sprites.draw(self.screen)
+            self.Map.drawMap(self.screen)
             pygame.display.flip()
 
 
