@@ -4,8 +4,8 @@ from Objects.Item import Item
 from Objects.Enemy import Enemy
 from Map import Map
 
-WIDTH = 360
-HEIGHT = 480
+WIDTH = 1366
+HEIGHT = 768
 FPS = 30
 BLACK = (0, 0, 0)
 
@@ -20,6 +20,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.objects = {"Player": Player(self.screen)}
         self.Map = Map()
+        self.gameMap = self.Map.generateRoom()
         self.sprites = pygame.sprite.Group()
         self.sprites.add(self.objects["Player"])
 
@@ -40,8 +41,8 @@ class Game:
                     
             self.sprites.update()
             self.screen.fill(BLACK)
+            self.Map.drawMap(self.screen, self.gameMap)
             self.sprites.draw(self.screen)
-            self.Map.drawMap(self.screen)
             pygame.display.flip()
 
 
