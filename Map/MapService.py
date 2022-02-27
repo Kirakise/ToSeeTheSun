@@ -1,5 +1,4 @@
 import pygame
-import random
 
 tile = pygame.image.load('./Assets/Sprites/frames/wall_banner_red.png')
 floor = pygame.image.load('./Assets/Sprites/frames/floor_2.png')
@@ -7,10 +6,7 @@ rock = pygame.image.load('./Assets/Sprites/frames/wall_column_mid.png')
 playerImg = pygame.image.load('./Assets/smth.png')
 
 
-class Map:
-    def __init__(self):
-        self.floor = ''
-
+class MapService:
     def generateRoom(self):
         room = [[0 for x in range(30)] for y in range(30)]
 
@@ -33,20 +29,6 @@ class Map:
                 elif i != 0 or i != 29 and j != 0 or j != 29:
                     room[i][j] = 'fl'
 
-        return self.generateRandomObstacles(room)
-
-    def generateRandomObstacles(self, room):
-        obstaclesForRoom = 10
-        random.seed(random.randint(1, 100))
-
-        for i in range(len(room)):
-            for j in range(len(room[i])):
-                if ((i == 0 or i == 29) and 0 <= j <= 29) or (0 <= i <= 29 and (j == 0 or j == 29)):
-                    continue
-                elif random.randint(1, 10) == 3 and obstaclesForRoom != 0:
-                    room[i][j] = 'rk'
-                    obstaclesForRoom -= 1
-
         return room
 
     def drawMap(self, screen, gameMap):
@@ -68,5 +50,5 @@ class Map:
                     screen.blit(tile, (x * 16, y * 16))
                 if gameMap[x][y] == 'fl':
                     screen.blit(floor, (x * 16, y * 16))
-                if gameMap[x][y] == 'rk':
-                    screen.blit(rock, (x * 16, y * 16))
+                # if gameMap[x][y] == 'rk':
+                #     screen.blit(rock, (x * 16, y * 16))

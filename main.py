@@ -2,7 +2,7 @@ import pygame
 from Objects.Player import Player
 from Objects.Item import Item
 from Objects.Enemy import Enemy
-from Map import Map
+from Map.MapController import MapController
 
 WIDTH = 1366
 HEIGHT = 768
@@ -19,8 +19,8 @@ class Game:
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
         self.objects = {"Player": Player(self.screen)}
-        self.Map = Map()
-        self.gameMap = self.Map.generateRoom()
+        self.Map = MapController()
+        self.gameMap = self.Map.room
         self.sprites = pygame.sprite.Group()
         self.sprites.add(self.objects["Player"])
 
