@@ -30,3 +30,6 @@ class Tile:
     def room_floor(self):
         return 'fl'
 
+    def random_monster_type(self):
+        return 'monster'
+        #return 'orc'

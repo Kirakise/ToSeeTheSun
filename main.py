@@ -23,7 +23,7 @@ class Game:
 
         # temporary (Room as Map)
         self.Map = RoomController()
-        self.gameMap = self.Map.room
+        self.gameMap = self.Map.generate_monster_room()
         #
 
         self.sprites = pygame.sprite.Group()
@@ -46,7 +46,7 @@ class Game:
                     
             self.sprites.update()
             self.screen.fill(BLACK)
-            self.Map.draw_map(self.screen, self.gameMap)
+            self.Map.draw_room(self.screen, self.gameMap)
             self.sprites.draw(self.screen)
             pygame.display.flip()
 
