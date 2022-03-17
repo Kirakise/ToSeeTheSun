@@ -1,9 +1,9 @@
 import pygame.sprite
 import pygame
-WIDTH = 360
-HEIGHT = 480
+WIDTH = 1366
+HEIGHT = 768
 
-playerImg = pygame.image.load('./Assets/smth.png')
+playerImg = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/elf_m.png')
 
 
 def ks(x, y):
