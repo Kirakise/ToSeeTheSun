@@ -4,6 +4,7 @@ from Objects.Item import Item
 from Objects.Enemy import Enemy
 # from Map.MapController import MapController
 from Map.Room.RoomController import RoomController
+from Map.Room.MonsterRoomController import MonsterRoomController
 
 WIDTH = 1366
 HEIGHT = 768
@@ -22,7 +23,7 @@ class Game:
         self.objects = {"Player": Player(self.screen)}
 
         # temporary (Room as Map)
-        self.Map = RoomController()
+        self.Map = MonsterRoomController()
         self.gameMap = self.Map.generate_monster_room()
         #
 
