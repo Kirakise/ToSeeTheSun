@@ -1,4 +1,5 @@
 import ScreenAndObjs as SO
+import random
 import pygame
 
 class Item(pygame.sprite.Sprite):
@@ -34,10 +35,26 @@ class SpeedArt(Item):
         self.traits = {'speed': 3}
 
 class HPArt(Item):
-    def __init(self, x, y):
+    def __init__(self, x, y):
         self.init(x, y)
         self.traits = {'hp': 1}
 
-class TreasureChecst(Item):
+class AttackArt(Item):
     def __init__(self, x, y):
         self.init(x, y)
+        self.traits = {'damage': 1}
+
+class TreasureChest(Item):
+    def __init__(self, x, y):
+        self.init(x, y)
+
+    def Add(self):
+        a = random.randint(0, 2)
+        print(a)
+        x = self.rect.x
+        y = self.rect.y
+        b = [HPArt, AttackArt, SpeedArt]
+        b[a](x, y)
+        SO.sprites.remove(self)
+        SO.items.remove(self)
+

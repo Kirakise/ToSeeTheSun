@@ -23,6 +23,7 @@ class Game:
         Item.SpeedArt(70, 33);
         Item.SpeedArt(90, 33);
         Item.SpeedArt(110, 33);
+        Item.TreasureChest(150, 33);
 
 
     def main(self):

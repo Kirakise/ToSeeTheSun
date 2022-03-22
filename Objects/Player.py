@@ -69,7 +69,7 @@ class Player(pygame.sprite.Sprite):
                       pygame.K_RIGHT: ar,
                       pygame.K_DOWN: ad}
         self.inventory = []
-        self.traits = {'speed': 2, 'hp': 3}
+        self.traits = {'speed': 2, 'hp': 3, 'damage': 1}
         self.modifyers = []
 
 

@@ -23,12 +23,14 @@ class Bullet(pygame.sprite.Sprite):
                     SO.objects.pop(self.num)
 
         for i in SO.enemies:
-            if abs(self.rect.x - i.rect.x) < 5 \
-                and abs(self.rect.y - i.rect.y) < 5:
+            if abs(self.rect.x - i.rect.x) < 10 \
+                and abs(self.rect.y - i.rect.y) < 10:
                 SO.sprites.remove(SO.objects[self.num])
                 SO.objects.pop(self.num)
-                SO.sprites.remove(i)
-                SO.objects.pop("Enemy" + str(i.num))
-                SO.enemies.remove(i)
+                i.traits['hp'] -= SO.objects['Player'].traits['damage']
+                if (i.traits['hp'] <= 0):
+                    SO.sprites.remove(i)
+                    SO.objects.pop("Enemy" + str(i.num))
+                    SO.enemies.remove(i)
         self.rect.x += self.dir[0]
         self.rect.y += self.dir[1]

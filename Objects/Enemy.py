@@ -14,6 +14,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.num = SO.EnemyNum
+        self.traits = {'hp': 5, 'speed': 1, 'damage': 1}
         SO.EnemyNum += 1
         if type == 1:
             self.AI = AI.MeleeAI
