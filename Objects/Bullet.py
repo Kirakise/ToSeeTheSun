@@ -1,8 +1,8 @@
 import pygame
 import ScreenAndObjs as SO
 
-WIDTH = 360
-HEIGHT = 480
+WIDTH = SO.WIDTH
+HEIGHT = SO.HEIGHT
 
 playerImg = pygame.image.load('./Assets/smth.png')
 
@@ -22,11 +22,13 @@ class Bullet(pygame.sprite.Sprite):
                     SO.sprites.remove(SO.objects[self.num])
                     SO.objects.pop(self.num)
 
-        if SO.EnemyNum in SO.objects.keys() and abs(self.rect.x - SO.objects[SO.EnemyNum].rect.x) < 5 \
-                and abs(self.rect.y - SO.objects[SO.EnemyNum].rect.y) < 5:
-            SO.sprites.remove(SO.objects[self.num])
-            SO.objects.pop(self.num)
-            SO.sprites.remove(SO.objects[0])
-            SO.objects.pop(0)
+        for i in SO.enemies:
+            if abs(self.rect.x - i.rect.x) < 5 \
+                and abs(self.rect.y - i.rect.y) < 5:
+                SO.sprites.remove(SO.objects[self.num])
+                SO.objects.pop(self.num)
+                SO.sprites.remove(i)
+                SO.objects.pop("Enemy" + str(i.num))
+                SO.enemies.remove(i)
         self.rect.x += self.dir[0]
         self.rect.y += self.dir[1]

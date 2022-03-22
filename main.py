@@ -1,30 +1,29 @@
 import pygame
-# import Objects.Player
-from Objects.Item import Item
+import Objects.Player as PL
+import Objects.Item as Item
 from Objects.Enemy import Enemy
 from Map import Map
 import ScreenAndObjs as SO
 
 
-FPS = 30
-BLACK = (0, 0, 0)
-
-
 class Game:
-
     def __init__(self):
         pygame.init()
         pygame.mixer.init()
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
         self.Map = Map()
+        self.gameMap = self.Map.generateRoom()
+        SO.objects["Player"] = PL.Player()
         SO.sprites.add(SO.objects["Player"])
-        SO.objects[SO.EnemyNum] = Enemy()
-        SO.sprites.add(SO.objects[SO.EnemyNum])
+        Enemy(0, SO.WIDTH /2, SO.HEIGHT / 2)
+        Enemy(1)
+        Item.SpeedArt(30, 33);
+
 
     def main(self):
         while True:
-            self.clock.tick(FPS)
+            self.clock.tick(SO.FPS)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -36,11 +35,10 @@ class Game:
             
             for i in SO.objects.copy().values():
                 i.Tick()
-
             SO.sprites.update()
-            SO.screen.fill(BLACK)
+            SO.screen.fill(SO.BLACK)
+            self.Map.drawMap(SO.screen, self.gameMap)
             SO.sprites.draw(SO.screen)
-            self.Map.drawMap(SO.screen)
             pygame.display.flip()
 
 
