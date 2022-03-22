@@ -1,0 +1,14 @@
+ltc	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	rtc
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lbc	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	rbc

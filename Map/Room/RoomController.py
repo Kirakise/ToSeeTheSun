@@ -6,7 +6,8 @@ class RoomController:
         self.RoomService = RoomService()
 
     def generate_start_room(self):
-        return self.RoomService.generate_start_room(18, 30)
+        #return self.RoomService.generate_start_room(18, 30)
+        return self.RoomService.generate_start_room_fromFile()
 
     def draw_room(self, screen, room):
         self.RoomService.draw_room(screen, room)

@@ -12,6 +12,21 @@ class RoomService:
     def __init__(self):
         self.Tile = Tile()
 
+    def generate_start_room_fromFile(self):
+        file = open('./Assets/MapCollection/startRoom.txt', 'r')
+        # Чтение и разделение файла на список строк
+        roomMap = file.read().splitlines()
+
+        # Разделение списка на массив списков
+        for i in range(0, len(roomMap)):
+            roomMap[i] = roomMap[i].split()
+            print(roomMap[i])
+
+        file.close()
+        return roomMap
+
+    # Генерация массива сетки комнаты.
+    # Каждому элементу присваивается тип спрайта
     def generate_start_room(self, height, width):
         room = [[0 for x in range(height)] for y in range(width)]
 
@@ -39,19 +54,41 @@ class RoomService:
 
         return room
 
+    # Отрисовка сетки
     def draw_room(self, screen, room):
         for x in range(len(room)):
+            print(len(room[x]))
             for y in range(len(room[x])):
+                # Отрисовка верхних угловых тайлов
+                if room[x][y] == "ltc" or room[x][y] == "rtc" or room[x][y] == "lbc" or room[x][y] == "rbc" \
+                        or room[x][y] == "mw" or room[x][y] == "lw" or room[x][y] == "rw":
+                    self.Tile.draw_tile(screen, wall, y, x)
+
+                elif room[x][y] == "fl":
+                    self.Tile.draw_tile(screen, floor, y, x)
+
+                # Отрисовка нижних угловых тайлов
+
+                # Отрисовка тайлов левой, вернхней/нижней и правой стены
+
+                # Отрисовка пола
+
+                # Отрисовка монстра
+
+                '''
+                # Отрисовка верхних угловых тайлов
                 if room[x][y] == self.Tile.left_top_corner():
                     self.Tile.draw_tile(screen, wall, x, y)
                 if room[x][y] == self.Tile.right_top_corner():
                     self.Tile.draw_tile(screen, wall, x, y)
 
+                # Отрисовка нижних угловых тайлов
                 if room[x][y] == self.Tile.left_bottom_corner():
                     self.Tile.draw_tile(screen, wall, x, y)
                 if room[x][y] == self.Tile.right_bottom_corner():
                     self.Tile.draw_tile(screen, wall, x, y)
 
+                # Отрисовка тайлов левой, вернхней/нижней и правой стены
                 if room[x][y] == self.Tile.left_wall():
                     self.Tile.draw_tile(screen, wall, x, y)
                 if room[x][y] == self.Tile.middle_wall():
@@ -59,8 +96,11 @@ class RoomService:
                 if room[x][y] == self.Tile.right_wall():
                     self.Tile.draw_tile(screen, wall, x, y)
 
+                # Отрисовка пола
                 if room[x][y] == self.Tile.room_floor():
                     self.Tile.draw_tile(screen, floor, x, y)
 
+                # Отрисовка монстра
                 if room[x][y] == self.Tile.random_monster_type():
                     self.Tile.draw_tile(screen, enemy, x, y)
+                '''
