@@ -11,15 +11,21 @@ class Item(pygame.sprite.Sprite):
         self.id = SO.ItemNum
         SO.ItemNum += 1
         SO.items.append(self)
+        SO.sprites.add(self)
 
 
     def Add(self):
         for i in self.traits.keys():
             SO.objects['Player'].traits[i] += self.traits[i]
+            SO.sprites.remove(self)
+            SO.items.remove(self)
 
     def Remove(self):
         for i in self.traits.keys():
             SO.objects['Player'].traits[i] -= self.traits[i]
+            self.rect.center = SO.objects["Player"].rect.center
+            SO.sprites.add(self)
+            SO.items.add(self)
 
 
 class SpeedArt(Item):
@@ -31,3 +37,7 @@ class HPArt(Item):
     def __init(self, x, y):
         self.init(x, y)
         self.traits = {'hp': 1}
+
+class TreasureChecst(Item):
+    def __init__(self, x, y):
+        self.init(x, y)

@@ -19,6 +19,10 @@ class Game:
         Enemy(0, SO.WIDTH /2, SO.HEIGHT / 2)
         Enemy(1)
         Item.SpeedArt(30, 33);
+        Item.SpeedArt(50, 33);
+        Item.SpeedArt(70, 33);
+        Item.SpeedArt(90, 33);
+        Item.SpeedArt(110, 33);
 
 
     def main(self):

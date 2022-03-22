@@ -19,7 +19,7 @@ class RangeAI:
         if SO.objects["Player"].inv == 0 and abs(obj.rect.x - SO.objects["Player"].rect.x) < 10 and abs(obj.rect.y - SO.objects["Player"].rect.y) < 10:
             SO.objects["Player"].traits["hp"] -= 1
             SO.objects["Player"].inv += 20
-            if SO.objects["Player"].traits["hp"] == 0:
+            if SO.objects["Player"].traits["hp"] <= 0:
                 exit(0);
 
 
@@ -33,3 +33,8 @@ class MeleeAI:
             obj.rect.y += (SO.objects["Player"].rect.y - obj.rect.y) / abs(SO.objects["Player"].rect.y - obj.rect.y)
         except ZeroDivisionError:
             obj.rect.y = obj.rect.y
+        if SO.objects["Player"].inv == 0 and abs(obj.rect.x - SO.objects["Player"].rect.x) < 10 and abs(obj.rect.y - SO.objects["Player"].rect.y) < 10:
+            SO.objects["Player"].traits["hp"] -= 1
+            SO.objects["Player"].inv += 20
+            if SO.objects["Player"].traits["hp"] <= 0:
+                exit(0);
