@@ -1,4 +1,4 @@
-ltc	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	rtc
+ltc	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	rtc
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
@@ -11,4 +11,4 @@ lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
 lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
-lbc	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	mw	rbc
+lbc	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	rbc

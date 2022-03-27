@@ -24,15 +24,23 @@ class Tile:
     def right_wall(self):
         return 'rw'
 
-    def middle_wall(self):
-        return 'mw'
+    def top_middle_wall(self):
+        return 'tmw'
+
+    def bot_middle_wall(self):
+        return 'bmw'
 
     def room_floor(self):
         return 'fl'
 
-    def random_monster_type(self):
-        return 'monster'
-        #return 'orc'
+    def enemy_spawner(self):
+        return 'enemy_spawner'
+
+    def room_rock(self):
+        return 'rock'
+
+    def room_planks(self):
+        return 'planks'
 
 
     

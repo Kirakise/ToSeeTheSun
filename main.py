@@ -26,8 +26,8 @@ class Game:
 
         # temporary (Room as Map)
         # Генерация комнаты
-        self.Map = RoomController()
-        self.gameMap = self.Map.generate_start_room()
+        self.Map = MonsterRoomController()
+        self.gameMap = self.Map.generate_room()
 
         # Группировка спрайтов
         self.sprites = pygame.sprite.Group()
