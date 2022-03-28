@@ -16,7 +16,7 @@ class Game:
         self.gameMap = self.Map.generateRoom()
         SO.objects["Player"] = PL.Player()
         SO.sprites.add(SO.objects["Player"])
-        Enemy(0, SO.WIDTH /2, SO.HEIGHT / 2)
+        Enemy(0, SO.WIDTH /2 - 40, SO.HEIGHT / 2 - 40)
         Enemy(1)
         Item.SpeedArt(30, 33);
         Item.SpeedArt(50, 33);

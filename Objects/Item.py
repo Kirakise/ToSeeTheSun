@@ -57,4 +57,5 @@ class TreasureChest(Item):
         b[a](x, y)
         SO.sprites.remove(self)
         SO.items.remove(self)
+        SO.objects["Player"].inventory.remove(self)
 

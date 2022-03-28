@@ -14,13 +14,14 @@ class Enemy(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.num = SO.EnemyNum
-        self.traits = {'hp': 5, 'speed': 1, 'damage': 1}
+        self.traits = {'hp': 5, 'speed': 1, 'damage': 1, 'AttackSpeed': 10}
         SO.EnemyNum += 1
         if type == 1:
             self.AI = AI.MeleeAI
         else:
             self.AI = AI.RangeAI
         SO.enemies.append(self)
+        self.lastAttack = 0
         SO.objects["Enemy" + str(self.num)] = self
         SO.sprites.add(self)
 
