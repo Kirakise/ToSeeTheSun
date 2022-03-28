@@ -1,0 +1,14 @@
+ltc	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	tmw	rtc
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lw	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	fl	rw
+lbc	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	bmw	rbc

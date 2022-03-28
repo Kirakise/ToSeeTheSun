@@ -8,6 +8,7 @@ import ScreenAndObjs as SO
 
 class Game:
     def __init__(self):
+        # Инициализация окна
         pygame.init()
         pygame.mixer.init()
         pygame.display.set_caption("To see the sun")
@@ -25,14 +26,15 @@ class Game:
         Item.SpeedArt(110, 33);
         Item.TreasureChest(150, 33);
 
-
     def main(self):
         while True:
             self.clock.tick(SO.FPS)
 
             for event in pygame.event.get():
+                # Ввод
                 if event.type == pygame.QUIT:
                     return
+
                 elif event.type == pygame.KEYDOWN:
                     SO.objects["Player"].Action(event.key, 1)
                 elif event.type == pygame.KEYUP:
@@ -45,7 +47,6 @@ class Game:
             self.Map.drawMap(SO.screen, self.gameMap)
             SO.sprites.draw(SO.screen)
             pygame.display.flip()
-
 
 game = Game()
 game.main()

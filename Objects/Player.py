@@ -5,7 +5,7 @@ import Objects.Bullet as Bt
 WIDTH = SO.WIDTH
 HEIGHT = SO.HEIGHT
 
-playerImg = pygame.image.load('./Assets/smth.png')
+playerImg = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/elf_m.png')
 
 
 def ks(x, y, speed):
