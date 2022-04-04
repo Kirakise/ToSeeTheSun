@@ -2,7 +2,7 @@ import pygame
 import Objects.Player as PL
 import Objects.Item as Item
 from Objects.Enemy import Enemy
-from Map import Map
+from Map.Room.ShoppingRoomController import ShoppingRoomController
 import ScreenAndObjs as SO
 
 
@@ -13,8 +13,8 @@ class Game:
         pygame.mixer.init()
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
-        self.Map = Map()
-        self.gameMap = self.Map.generateRoom()
+        self.Map = ShoppingRoomController()
+        self.gameMap = self.Map.generate_room()
         SO.objects["Player"] = PL.Player()
         SO.sprites.add(SO.objects["Player"])
         Enemy(0, SO.WIDTH /2 - 40, SO.HEIGHT / 2 - 40)
@@ -44,7 +44,7 @@ class Game:
                 i.Tick()
             SO.sprites.update()
             SO.screen.fill(SO.BLACK)
-            self.Map.drawMap(SO.screen, self.gameMap)
+            self.Map.draw_room(SO.screen, self.gameMap)
             SO.sprites.draw(SO.screen)
             pygame.display.flip()
 

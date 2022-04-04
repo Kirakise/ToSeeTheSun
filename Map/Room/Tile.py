@@ -42,5 +42,14 @@ class Tile:
     def room_planks(self):
         return 'planks'
 
+    def room_wood(self):
+        return 'wood'
 
-    
+    def trader(self):
+        return 'trader'
+
+    def room_barrel(self):
+        return 'barrel'
+
+    def room_box(self):
+        return 'box'

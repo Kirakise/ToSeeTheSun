@@ -5,8 +5,12 @@ wall = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-dngn/wall/brick_bro
 floor = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-dngn/floor/cobble_blood3.png')
 rock = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/item/amulet/cameo_blue.png')
 planks = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/item/amulet/eye_cyan.png')
+wood = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/item/amulet/eye_cyan.png')
+box = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-misc/blood_green.png')
+barrel = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-misc/blood_red1.png')
 
 enemy = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/centaur_brown_f.png')
+trader = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/centaur_brown_f.png')
 
 
 class RoomService:
@@ -68,3 +72,15 @@ class RoomService:
 
                 if room[x][y] == self.Tile.room_planks():
                     self.Tile.draw_tile(screen, planks, y, x)
+
+                if room[x][y] == self.Tile.room_wood():
+                    self.Tile.draw_tile(screen, wood, y, x)
+
+                if room[x][y] == self.Tile.room_barrel():
+                    self.Tile.draw_tile(screen, barrel, y, x)
+
+                if room[x][y] == self.Tile.room_box():
+                    self.Tile.draw_tile(screen, box, y, x)
+
+                if room[x][y] == self.Tile.trader():
+                    self.Tile.draw_tile(screen, trader, y, x)
