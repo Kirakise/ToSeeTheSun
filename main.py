@@ -3,6 +3,7 @@ import Objects.Player as PL
 import Objects.Item as Item
 from Objects.Enemy import Enemy
 from Map.Room.ShoppingRoomController import ShoppingRoomController
+from Map.Room.TreasureRoomController import TreasureRoomController
 import ScreenAndObjs as SO
 
 
@@ -13,11 +14,11 @@ class Game:
         pygame.mixer.init()
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
-        self.Map = ShoppingRoomController()
+        self.Map = TreasureRoomController()
         self.gameMap = self.Map.generate_room()
         SO.objects["Player"] = PL.Player()
         SO.sprites.add(SO.objects["Player"])
-        Enemy(0, SO.WIDTH /2 - 40, SO.HEIGHT / 2 - 40)
+        Enemy(0, SO.WIDTH / 2 - 40, SO.HEIGHT / 2 - 40)
         Enemy(1)
         Item.SpeedArt(30, 33);
         Item.SpeedArt(50, 33);

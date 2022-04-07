@@ -53,3 +53,6 @@ class Tile:
 
     def room_box(self):
         return 'box'
+
+    def room_chest(self):
+        return 'chest'

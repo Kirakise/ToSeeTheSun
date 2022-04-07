@@ -8,6 +8,7 @@ planks = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/item/amulet/eye_cyan
 wood = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/item/amulet/eye_cyan.png')
 box = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-misc/blood_green.png')
 barrel = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-misc/blood_red1.png')
+chest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/dc-misc/blood_red4.png')
 
 enemy = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/centaur_brown_f.png')
 trader = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/player/base/centaur_brown_f.png')
@@ -24,7 +25,6 @@ class RoomService:
         # Разделение списка на массив списков
         for i in range(0, len(roomMap)):
             roomMap[i] = roomMap[i].split()
-            print(roomMap)
 
         file.close()
 
@@ -84,3 +84,6 @@ class RoomService:
 
                 if room[x][y] == self.Tile.trader():
                     self.Tile.draw_tile(screen, trader, y, x)
+
+                if room[x][y] == self.Tile.room_chest():
+                    self.Tile.draw_tile(screen, chest, y, x)
