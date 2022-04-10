@@ -2,8 +2,8 @@ import pygame
 import Objects.Player as PL
 import Objects.Item as Item
 from Objects.Enemy import Enemy
-from Map.Room.ShoppingRoomController import ShoppingRoomController
 from Map.Room.TreasureRoomController import TreasureRoomController
+from Map.MapController import MapController
 import ScreenAndObjs as SO
 
 
@@ -14,6 +14,10 @@ class Game:
         pygame.mixer.init()
         pygame.display.set_caption("To see the sun")
         self.clock = pygame.time.Clock()
+
+        self.MapController = MapController()
+        self.MapController.qq()
+
         self.Map = TreasureRoomController()
         self.gameMap = self.Map.generate_room()
         SO.objects["Player"] = PL.Player()
