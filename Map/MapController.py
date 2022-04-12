@@ -3,7 +3,10 @@ from Map.MapService import MapService
 
 class MapController:
     def __init__(self):
-        self.MapService = MapService(5)
+        self.MapService = MapService()
 
-    def qq(self):
-        return "123"
+    def cretae_map_graph(self, room_quantity):
+        return self.MapService.cretae_map_graph(room_quantity)
+
+    def find_collisions(self, room, x, y):
+        self.MapService.find_collisions(room, x, y)

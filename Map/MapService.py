@@ -1,20 +1,26 @@
+from Map.Room.TreasureRoomController import TreasureRoomController
 from networkx.generators.random_graphs import erdos_renyi_graph
 
-from Map.Room.MonsterRoomController import MonsterRoomController
-
-
 class MapService:
-    def __init__(self, num):
-        self.MonsterRoomController = MonsterRoomController()
-        tmp = {}
-        for i in range(num):
-            tmp[f'Room {str(i)}'] = [self.MonsterRoomController.generate_room()]
+    def __init__(self):
+        self.TreasureRoomController = TreasureRoomController()
+        self.level_graph = {}
 
-        self.n = 6
+    def cretae_map_graph(self, room_quantity):
+        tmp = {}
+        for i in range(room_quantity):
+            tmp[f'Room_{str(i)}'] = [self.TreasureRoomController.generate_room()]
+
+        self.n = room_quantity
         self.p = 0.5
 
         self.level_graph = erdos_renyi_graph(self.n, self.p)
+
         for i in self.level_graph.edges:
-            tmp[f'Room {str(i[0])}'].append(f'Room {str(i[1])}')
+            tmp[f'Room_{str(i[0])}'].append(f'Room_{str(i[1])}')
+
         self.level_graph = tmp
-        print(tmp)
+        return self.level_graph
+
+    def find_collisions(self, room, x, y):
+        print(room[x][y])

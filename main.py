@@ -16,7 +16,8 @@ class Game:
         self.clock = pygame.time.Clock()
 
         self.MapController = MapController()
-        self.MapController.qq()
+        self.graph = self.MapController.cretae_map_graph(6)
+        self.MapController.find_collisions(self.graph[list(self.graph.keys())[0]][0], 4, 6)
 
         self.Map = TreasureRoomController()
         self.gameMap = self.Map.generate_room()
