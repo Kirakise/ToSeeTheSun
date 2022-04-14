@@ -44,16 +44,21 @@ class AttackArt(Item):
         self.init(x, y)
         self.traits = {'damage': 1}
 
+class AttackSpeedArt(Item):
+    def __init__(self, x, y):
+        self.init(x, y)
+        self.traits = {'AttackSpeed' : 10}
+
 class TreasureChest(Item):
     def __init__(self, x, y):
         self.init(x, y)
 
     def Add(self):
-        a = random.randint(0, 2)
+        a = random.randint(0, 3)
         print(a)
         x = self.rect.x
         y = self.rect.y
-        b = [HPArt, AttackArt, SpeedArt]
+        b = [HPArt, AttackArt, SpeedArt, AttackSpeedArt]
         b[a](x, y)
         SO.sprites.remove(self)
         SO.items.remove(self)

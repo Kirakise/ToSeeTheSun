@@ -4,12 +4,39 @@ import ScreenAndObjs as SO
 WIDTH = SO.WIDTH
 HEIGHT = SO.HEIGHT
 
-playerImg = pygame.image.load('./Assets/smth.png')
+ArrowNorth = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow0.png')
+ArrowNorthEast = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow1.png');
+ArrowEast = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow2.png');
+ArrowSouthEast = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow3.png');
+ArrowSouth = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow4.png');
+ArrowSouthWest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow5.png');
+ArrowWest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow6.png');
+ArrowNorthWest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow7.png');
+
+
+def getArrow(dir):
+    if (dir[1] > 0):
+        if (dir[0] > 0):
+            return ArrowSouthEast
+        if (dir[0] < 0):
+            return ArrowSouthWest
+        return ArrowSouth
+    if (dir[1] < 0):
+        if (dir[0] > 0):
+            return ArrowNorthEast
+        if (dir[1] < 0):
+            return ArrowNorthWest
+        return ArrowNorth
+    if (dir[0] > 0):
+        return ArrowEast
+    return ArrowWest
+
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, dir, num, caster):
         pygame.sprite.Sprite.__init__(self)
         self.num = num
+        playerImg = getArrow(dir)
         self.image = playerImg.convert_alpha()
         SO.screen.blit(playerImg, (50, 50))
         self.rect = self.image.get_rect()
