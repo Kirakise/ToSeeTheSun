@@ -1,4 +1,4 @@
-from Map.Room.TreasureRoomService import TreasureRoomService
+from Map.Room.treasure.TreasureRoomService import TreasureRoomService
 
 
 class TreasureRoomController:
