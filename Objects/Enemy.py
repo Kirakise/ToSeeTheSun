@@ -6,7 +6,9 @@ playerImg = pygame.image.load('./Assets/smth.png')
 WIDTH = SO.WIDTH
 HEIGHT = SO.HEIGHT
 
+#Класс отвечает за враждебных мобов
 class Enemy(pygame.sprite.Sprite):
+    #Инициализация, параметры: тип атаки моба (рейндж = 1, мили = 0), x и y координаты спавна
     def __init__(self, type = 0, x = WIDTH - 10, y = HEIGHT - 10):
         pygame.sprite.Sprite.__init__(self)
         self.image = playerImg.convert_alpha()
@@ -24,6 +26,6 @@ class Enemy(pygame.sprite.Sprite):
         self.lastAttack = 0
         SO.objects["Enemy" + str(self.num)] = self
         SO.sprites.add(self)
-
+    #Функция отвечает за поведение моба в каждый кадр игры
     def Tick(self):
         self.AI.Tick(self, self)

@@ -1,9 +1,9 @@
 import pygame
 import ScreenAndObjs as SO
-
+#Размеры экрана
 WIDTH = SO.WIDTH
 HEIGHT = SO.HEIGHT
-
+#Текстуры снарядов для каждого направления
 ArrowNorth = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow0.png')
 ArrowNorthEast = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow1.png');
 ArrowEast = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow2.png');
@@ -14,6 +14,7 @@ ArrowWest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow6.png
 ArrowNorthWest = pygame.image.load('./Assets/crawl-tiles Oct-5-2010/effect/arrow7.png');
 
 
+#Функция принимает направление в виде (0,1) и относительно направления выдает соответствующий спрайт снаряда
 def getArrow(dir):
     if (dir[1] > 0):
         if (dir[0] > 0):
@@ -31,8 +32,9 @@ def getArrow(dir):
         return ArrowEast
     return ArrowWest
 
-
+#Класс отвечает за действие пули в игре
 class Bullet(pygame.sprite.Sprite):
+    #Инициализация, параметры по порядку: x и y координаты спавна, (x, y) направление снаряда, num - уникальный номер пули, caster - "Player" или "Mob"
     def __init__(self, x, y, dir, num, caster):
         pygame.sprite.Sprite.__init__(self)
         self.num = num
@@ -44,7 +46,7 @@ class Bullet(pygame.sprite.Sprite):
         self.dir = dir
         self.caster = caster
 
-    def Tick(self):
+    def Tick(self): #Функция отвечает за поведение пули в каждый кадр игры
         if self.rect.x + self.dir[0] <= 0 or self.rect.x + self.dir[0] >= WIDTH \
                 or self.rect.y + self.dir[1] <= 0 or self.rect.y + self.dir[1] >= HEIGHT:
                     SO.sprites.remove(SO.objects[self.num])

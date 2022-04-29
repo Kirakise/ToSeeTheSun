@@ -7,8 +7,9 @@ class AI:
         self.x = 0
 
 
-
+#Класс для управления мобов с рендж атакой
 class RangeAI:
+    #функция отвечает за действие моба в каждый кадр, в качестве аргумента требует класс самого моба
     def Tick(self, obj):
         try:
             tempX = (SO.objects["Player"].rect.x - obj.rect.x) / abs(SO.objects["Player"].rect.x - obj.rect.x)
@@ -56,8 +57,9 @@ class RangeAI:
         else:
             obj.lastAttack -= 1
 
-
+#Класс для управления мобов с мили атакой
 class MeleeAI:
+    #функция отвечает за действие моба в каждый кадр, в качестве аргумента требует класс самого моба
     def Tick(self, obj):
         try:
             obj.rect.x += (SO.objects["Player"].rect.x - obj.rect.x) / abs(SO.objects["Player"].rect.x - obj.rect.x) * obj.traits['speed']
